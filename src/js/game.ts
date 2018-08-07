@@ -54,7 +54,7 @@ export interface SleuthVoices {
 const SLEUTHS: Array<Sleuths> = [
   {
     'nonGoogleVoice': 'Samantha',
-    'googleVoice': 'Google US English',
+    'googleVoice': 'Google 日本語',
     'emoji': '/img/emojis/ui/sleuth.svg',
   }
 ];

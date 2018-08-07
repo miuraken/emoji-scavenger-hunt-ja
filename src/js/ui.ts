@@ -23,6 +23,7 @@ import {addClass, removeClass} from './classes';
 import {camera} from './camera';
 import {share} from './share';
 import {isMobile, isIOS, isChromeIOS, getQueryParam} from './utils';
+import {SCAVENGER_CLASSES_JA} from './scavenger_classes';
 
 export const VIEWS = {
   LOADING: 'loading',
@@ -101,16 +102,13 @@ const GAME_OUTCOME = {
 };
 
 export const GAME_STRINGS = {
-  CAMERA_NO_ACCESS: 'Hey! To play you’ll need to enable camera access in ' +
-      'your browser address bar 👆. Your camera is how you’ll ' +
-      'find emojis in the real world. We won’t store any ' +
-      'images from your camera. 👍',
-  SAFARI_WEBVIEW: '🚨 To play this game, please open it directly in Safari. ' +
-      'If needed, copy/paste or type the URL into the address bar. ' +
-      'https://g.co/emojiscavengerhunt 🚨',
-  CAMERA_GENERAL_ERROR: 'It looks like your browser or device doesn’t ' +
-      'support this experiment. It’s designed to work best ' +
-      'on mobile (iOS/Safari or Android/Chrome). 😭'
+  CAMERA_NO_ACCESS: 'ブラウザのアドレスバーから、カメラを許可してください。' +
+      'カメラで捉えた画像は、デバイス内のみで処理され、どこにも保存されません。',
+  SAFARI_WEBVIEW: '🚨 遊ぶためには、 Safari で直接このページを開いてください。' +
+      'URL は https://g.co/emojiscavengerhunt です。',
+  CAMERA_GENERAL_ERROR: 'お使いの端末はサポートされていないようです。' +
+      'このゲームはスマートフォン (iOS/Safari または Android/Chrome)' +
+      'での利用を推奨しています。'
 };
 
 export interface ViewsListTypes {
@@ -219,16 +217,20 @@ export class Ui {
     this.cameraFPSEl = document.querySelector(SELECTORS.CAMERA_FPS_EL);
 
     this.sleuthSpeakingPrefixes = [
-      'Is that a ',
-      'Do I see a ',
-      'Do I spy a ',
-      'Did I just see a ',
-      'Was that a ',
-      'I think I saw a ',
-      'Am I seeing a ',
-      'Could that be a ',
-      'Did I spot a ',
-      'Might I see a '
+      ' かな？',
+      ' ですかねぇ？',
+      ' っぽいですね',
+      ' に見えます',
+      ' ですよね？',
+      ' って感じ？',
+      ' のような気が',
+      ' でしょうか？',
+      ' みたいな？',
+      ' だと思います',
+      ' に見えてきました',
+      ' かもしれない',
+      ' かなぁ',
+      ' の可能性もありますね',
     ];
 
     this.activeView = VIEWS.LANDING;
@@ -308,7 +310,7 @@ export class Ui {
 
           (<any>window).gtag('event', 'Click', {
             'event_category': 'Button',
-            'event_label': 'Play Again'
+            'event_label': 'もう一度遊ぶ'
           });
         });
       }
@@ -346,7 +348,7 @@ export class Ui {
 
         (<any>window).gtag('event', 'Click', {
           'event_category': 'Link',
-          'event_label': 'Quit (confirm)'
+          'event_label': 'やめる (確認)'
         });
       });
     }
@@ -405,9 +407,9 @@ export class Ui {
    * @returns The sleuth found message display string.
    */
   get sleuthSpeakingFoundItMsg(): string {
-    return `Hey you found <img class="view__sleuth__speaking__emoji"` +
+    return `やったね！ <img class="view__sleuth__speaking__emoji"` +
            `src="${game.currentEmoji.path}"` +
-           `alt="${game.currentEmoji.emoji} icon"/>\u00A0!`;
+           `alt="${game.currentEmoji.emoji} icon"/>\u00A0 を見つけました!`;
   }
 
   /**
@@ -416,7 +418,7 @@ export class Ui {
    * @returns The sleuth found message speak string.
    */
   get sleuthSpeakingFoundItMsgEmojiName(): string {
-    return `Hey you found ${game.currentEmoji.name}\u00A0!`;
+    return `${SCAVENGER_CLASSES_JA[game.currentEmoji.name]} を見つけました!`;
   }
 
   /**
@@ -425,8 +427,7 @@ export class Ui {
    * @returns You found X items message string.
    */
   get sleuthSpeakingFoundXMsg(): string {
-    return `Nice job. You found ${game.score.toString()} ` +
-           `${game.score === 1 ? `item.` : `items.`}`;
+    return `やりました！${game.score.toString()} 個のアイテムを見つけました。`;
   }
 
   /**
@@ -436,7 +437,7 @@ export class Ui {
    * @returns Your time is up message string.
    */
   get sleuthSpeakingFoundNoMsg(): string {
-    return 'Oh no! Your time is up.';
+    return '残念! 時間切れです。';
   }
 
   /**
@@ -445,7 +446,7 @@ export class Ui {
    * @returns You did it message string.
    */
   get sleuthSpeakingFoundAllMsg(): string {
-    return 'You did it!';
+    return 'やりましたね!';
   }
 
   /**
@@ -457,8 +458,8 @@ export class Ui {
   get sleuthSpeakingSeeingMsg(): string {
     let randomIndex = Math.floor(this.sleuthSpeakingPrefixes.length *
         Math.random());
-    return this.sleuthSpeakingPrefixes[randomIndex] +
-           game.topItemGuess.toString() + ' ?';
+    return SCAVENGER_CLASSES_JA[game.topItemGuess.toString()] +
+           this.sleuthSpeakingPrefixes[randomIndex];
   }
 
   /**
@@ -488,8 +489,7 @@ export class Ui {
     }
 
     if (updateCountDownTimer) {
-      this.timerCountdownEl.textContent = value.toString() +
-          `${game.timer === 1 ? ` second.` : ` seconds.`}`;
+      this.timerCountdownEl.textContent = value.toString() + '秒';
     }
   }
 
@@ -568,9 +568,9 @@ export class Ui {
    */
   setNrEmojisFound() {
     this.nrEmojisFoundEl.textContent =
-        `${game.score.toString()} ${game.score === 1 ? `item` : `items`}`;
+        `${game.score.toString()} 個のアイテム`;
     this.nrMaxEmojisFoundEl.textContent =
-    `${game.score.toString()} ${game.score === 1 ? `item` : `items`}`;
+    `${game.score.toString()} 個のアイテム`;
   }
 
   /**
