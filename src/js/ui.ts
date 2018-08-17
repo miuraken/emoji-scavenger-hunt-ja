@@ -105,7 +105,7 @@ export const GAME_STRINGS = {
   CAMERA_NO_ACCESS: 'ブラウザのアドレスバーから、カメラを許可してください。' +
       'カメラで捉えた画像は、デバイス内のみで処理され、どこにも保存されません。',
   SAFARI_WEBVIEW: '🚨 遊ぶためには、 Safari で直接このページを開いてください。' +
-      'URL は https://g.co/emojiscavengerhunt です。',
+      'URL は https://g.co/emojiscavengerhunt です。🚨',
   CAMERA_GENERAL_ERROR: 'お使いの端末はサポートされていないようです。' +
       'このゲームはスマートフォン (iOS/Safari または Android/Chrome)' +
       'での利用を推奨しています。'
@@ -310,7 +310,7 @@ export class Ui {
 
           (<any>window).gtag('event', 'Click', {
             'event_category': 'Button',
-            'event_label': 'もう一度遊ぶ'
+            'event_label': 'Play Again'
           });
         });
       }
@@ -348,7 +348,7 @@ export class Ui {
 
         (<any>window).gtag('event', 'Click', {
           'event_category': 'Link',
-          'event_label': 'やめる (確認)'
+          'event_label': 'Quit (confirm)'
         });
       });
     }
@@ -409,7 +409,7 @@ export class Ui {
   get sleuthSpeakingFoundItMsg(): string {
     return `やったね！ <img class="view__sleuth__speaking__emoji"` +
            `src="${game.currentEmoji.path}"` +
-           `alt="${game.currentEmoji.emoji} icon"/>\u00A0 を見つけました!`;
+           `alt="${game.currentEmoji.emoji} icon"/>\u00A0 を見つけました！`;
   }
 
   /**
@@ -418,7 +418,7 @@ export class Ui {
    * @returns The sleuth found message speak string.
    */
   get sleuthSpeakingFoundItMsgEmojiName(): string {
-    return `${SCAVENGER_CLASSES_JA[game.currentEmoji.name]} を見つけました!`;
+    return `${SCAVENGER_CLASSES_JA[game.currentEmoji.name]} を見つけました！`;
   }
 
   /**
@@ -437,7 +437,7 @@ export class Ui {
    * @returns Your time is up message string.
    */
   get sleuthSpeakingFoundNoMsg(): string {
-    return '残念! 時間切れです。';
+    return '残念！時間切れです。';
   }
 
   /**
@@ -446,7 +446,7 @@ export class Ui {
    * @returns You did it message string.
    */
   get sleuthSpeakingFoundAllMsg(): string {
-    return 'やりましたね!';
+    return 'やりましたね！';
   }
 
   /**
@@ -489,7 +489,7 @@ export class Ui {
     }
 
     if (updateCountDownTimer) {
-      this.timerCountdownEl.textContent = value.toString() + '秒';
+      this.timerCountdownEl.textContent = value.toString();
     }
   }
 
