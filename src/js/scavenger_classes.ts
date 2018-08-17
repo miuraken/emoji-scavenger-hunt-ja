@@ -662,7 +662,7 @@ export const SCAVENGER_CLASSES_JA: {[key: string]: string} = {
     'steam locomotive': '蒸気機関車',
     'miniskirt': 'ミニスカート',
     'hoopskirt': 'フープスカート',
-    'baseball': '野球',
+    'baseball': '野球ボール',
     'volcano': '火山',
     'dishwasher': '食器洗い機',
     'piggy bank': '貯金箱',
