@@ -489,7 +489,7 @@ export class Ui {
     }
 
     if (updateCountDownTimer) {
-      this.timerCountdownEl.textContent = value.toString() + '秒';
+      this.timerCountdownEl.textContent = `制限時間: ${value.toString()} 秒`;
     }
   }
 

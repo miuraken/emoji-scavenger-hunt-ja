@@ -446,7 +446,7 @@ export const SCAVENGER_CLASSES: {[key: number]: string} = {
 export const SCAVENGER_CLASSES_JA: {[key: string]: string} = {
     'kimono': '着物',
     'truck': 'トラック',
-    'plunger': 'スッポンスッポン',
+    'plunger': 'スッポン',
     'desk': '机',
     'school bus': 'スクールバス',
     'toaster': 'トースター',
@@ -461,7 +461,7 @@ export const SCAVENGER_CLASSES_JA: {[key: string]: string} = {
     'plane': '飛行機',
     'sliding door': '引き戸',
     'china cabinet': 'タンス',
-    'vault': ' アーチ型の天井',
+    'vault': 'アーチ型の天井',
     'bullet train': '新幹線',
     'microwave': '電子レンジ',
     'theater curtain': '劇場の幕',
