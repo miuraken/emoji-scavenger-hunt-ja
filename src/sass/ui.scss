@@ -767,6 +767,10 @@ body {
       }
     }
   }
+
+  &__heading {
+    font-family: $display-font-cjk;
+  }
 }
 
 .view__found-x-items > *,
