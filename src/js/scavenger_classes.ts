@@ -518,7 +518,7 @@ export const SCAVENGER_CLASSES_JA: {[key: string]: string} = {
     'dining table': 'ダイニングテーブル',
     'banjo': 'バンジョー',
     'confectionery': '製菓',
-    'watch': '時計',
+    'watch': '腕時計',
     'crossword puzzle': 'クロスワードパズル',
     'modem': 'モデム',
     'saltshaker': 'ソルトシェーカー',
