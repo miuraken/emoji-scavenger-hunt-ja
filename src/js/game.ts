@@ -165,19 +165,19 @@ export class Game {
     this.currentLvlIndex = 0;
 
     this.audioSources = {
-      [AUDIO.GAME_LOOP]: new Audio('/audio/game-loop.mp4'),
-      [AUDIO.TIME_RUNNING_LOW]: new Audio('/audio/time-running-out.mp4'),
-      [AUDIO.COUNTDOWN]: new Audio('/audio/countdown.mp4'),
-      [AUDIO.FAIL]: new Audio('/audio/fail.mp4'),
-      [AUDIO.FOUND_IT]: new Audio('/audio/foundit.mp4'),
-      [AUDIO.WIN]: new Audio('/audio/win.mp4'),
-      [AUDIO.END]: new Audio('/audio/end-of-game.mp4'),
-      [AUDIO.TIMER_INCREASE]: new Audio('/audio/timer-increase.mp4')
+      [AUDIO.GAME_LOOP]: new Audio('/ja/audio/game-loop.mp4'),
+      [AUDIO.TIME_RUNNING_LOW]: new Audio('/ja/audio/time-running-out.mp4'),
+      [AUDIO.COUNTDOWN]: new Audio('/ja/audio/countdown.mp4'),
+      [AUDIO.FAIL]: new Audio('/ja/audio/fail.mp4'),
+      [AUDIO.FOUND_IT]: new Audio('/ja/audio/foundit.mp4'),
+      [AUDIO.WIN]: new Audio('/ja/audio/win.mp4'),
+      [AUDIO.END]: new Audio('/ja/audio/end-of-game.mp4'),
+      [AUDIO.TIMER_INCREASE]: new Audio('/ja/audio/timer-increase.mp4')
     };
 
     if (isIOS()) {
       this.audioSources[AUDIO.IOS_SPEECH_SPRITE] =
-          new Audio('/audio/ios-speech-sprite.m4a');
+          new Audio('/ja/audio/ios-speech-sprite.m4a');
     }
 
     if (getQueryParam('demo') === 'true') {

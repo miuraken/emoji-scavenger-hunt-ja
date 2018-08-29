@@ -88,7 +88,7 @@ body {
 }
 
 .play-btn {
-  background: $c-pink url('/img/sound.svg');
+  background: $c-pink url('/ja/img/sound.svg');
   background-repeat: no-repeat;
   background-position: 10px 19px;
   padding: 8px 20px 8px 45px;
@@ -408,6 +408,16 @@ body {
     max-width: 330px;
   }
 
+  &__privacy-link {
+    font-size: 11px;
+    line-height: 18px;
+    max-width: 330px;
+
+    a {
+      color: #fff;
+    }
+  }
+
   &__platform-msg {
     display: none;
     max-width: 600px;
@@ -445,17 +455,25 @@ body {
     }
   }
 
-  &__privacy-link {
-    bottom: 12px;
-    color: $c-white;
-    font-size: 12px;
+  &__lang-selector {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24px…px" viewBox="0 0 24 24" fill="#fff"><path d="M7 10l5 5 5-5z"></path></svg>');
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    border: none;
+    bottom: 10px;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
     position: absolute;
-    right: 14px;
-    text-align: right;
-    text-decoration: none;
-    width: 124px;
+    right: 10px;
+    width: 120px;
+
     @include bp(s) {
-      width: 300px;
+      font-size: 18px;
     }
   }
 
