@@ -456,6 +456,9 @@ body {
   }
 
   &__lang-selector {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
     background: none;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24px…px" viewBox="0 0 24 24" fill="#fff"><path d="M7 10l5 5 5-5z"></path></svg>');
     background-repeat: no-repeat;
@@ -468,6 +471,10 @@ body {
     position: absolute;
     right: 10px;
     width: 120px;
+
+    @include bp(s) {
+      font-size: 18px;
+    }
   }
 
   &.not-supported {
