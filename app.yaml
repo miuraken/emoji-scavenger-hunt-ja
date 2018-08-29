@@ -102,6 +102,10 @@ handlers:
         *.gstatic.com;
 
 # Root
+- url: /ja
+  secure: always
+  script: main.app
+
 - url: /ja/
   secure: always
   static_files: dist/index.html
