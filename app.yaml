@@ -19,7 +19,7 @@ threadsafe: true
 instance_class: F4_1G
 
 handlers:
-- url: /model/(group1-shard1of1)
+- url: /ja/model/(group1-shard1of1)
   secure: always
   static_files: dist/model/\1
   upload: dist/model/(.*)
@@ -46,7 +46,7 @@ handlers:
         fonts.googleapis.com
         *.gstatic.com;
 
-- url: /model/(.*\.(pb|json))
+- url: /ja/model/(.*\.(pb|json))
   secure: always
   static_files: dist/model/\1
   upload: dist/model/(.*)
@@ -74,7 +74,7 @@ handlers:
         *.gstatic.com;
 
 # Static assets (anything with a file extension)
-- url: /(.*\..*)
+- url: /ja/(.*\..*)
   secure: always
   static_files: dist/\1
   upload: dist/(.*)
@@ -102,7 +102,7 @@ handlers:
         *.gstatic.com;
 
 # Root
-- url: /
+- url: /ja/
   secure: always
   static_files: dist/index.html
   upload: dist/(.*)
@@ -130,7 +130,7 @@ handlers:
         *.gstatic.com;
 
 # Paths with a trailing slash
-- url: /(.*\/)
+- url: /ja/(.*\/)
   secure: always
   static_files: dist/\1index.html
   upload: dist/(.*)
@@ -158,7 +158,7 @@ handlers:
         *.gstatic.com;
 
 # Paths without a trailing slash
-- url: /(.*)?
+- url: /ja/(.*)?
   secure: always
   static_files: dist/\1/index.html
   upload: dist/(.*)
