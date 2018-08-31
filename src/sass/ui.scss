@@ -382,7 +382,6 @@ body {
 
   &__intro {
     font-size: 16px;
-    line-height: 22px;
     max-width: 320px;
 
     @include bp(s) {
@@ -397,7 +396,7 @@ body {
 
   &__desktop-msg {
     display: none;
-    font-size: 11px;
+    font-size: 14px;
     line-height: 18px;
     max-width: 330px;
   }
@@ -405,16 +404,12 @@ body {
   &__age-msg {
     font-size: 11px;
     line-height: 18px;
-    max-width: 330px;
-  }
-
-  &__privacy-link {
-    font-size: 11px;
-    line-height: 18px;
+    margin: 16px 0;
     max-width: 330px;
 
     a {
       color: #fff;
+      font-weight: 300;
     }
   }
 
