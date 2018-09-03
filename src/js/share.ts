@@ -23,11 +23,11 @@ const SELECTORS = {
 };
 
 const TWITTER_SHARING_MSG_PREFIX =
-    'https://twitter.com/intent/tweet?text=I%20found%20';
+    'https://twitter.com/intent/tweet?text=';
 const TWITTER_SHARING_MSG_SUFFIX =
-    '%20in%20the%20real%20world.%20How%20many%20can%20you%20find%3F%20' +
-    'Start%20your%20search%20at&hashtags=AIExperiments,tensorflowjs' +
-    '&url=https%3A%2F%2Fg.co%2Femojiscavengerhunt';
+    'を発見しました！あなたは何個見つけられるかな？' +
+    'さっそくプレイしてみよう！&hashtags=AIExperiments,tensorflowjs' +
+    '&url=https%3A%2F%2Fg.co%2Femojikarimono';
 
 /** Handles events and UI elements related to sharing. */
 export class Share {
