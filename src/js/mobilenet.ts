@@ -23,8 +23,8 @@ import {SCAVENGER_CLASSES} from './scavenger_classes';
 
 type TensorMap = {[name: string]: tfc.Tensor};
 
-const MODEL_FILE_URL = '/model/web_model.pb';
-const WEIGHT_MANIFEST_FILE_URL = '/model/weights_manifest.json';
+const MODEL_FILE_URL = '/ja/model/web_model.pb';
+const WEIGHT_MANIFEST_FILE_URL = '/ja/model/weights_manifest.json';
 const INPUT_NODE_NAME = 'input';
 const OUTPUT_NODE_NAME = 'final_result';
 const PREPROCESS_DIVISOR = tfc.scalar(255 / 2);
