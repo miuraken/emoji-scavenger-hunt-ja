@@ -358,7 +358,7 @@ export class Ui {
     if (this.closeAboutBtn) {
       this.closeAboutBtn.addEventListener('click', () => {
         this.hideView(VIEWS.ABOUT);
-        history.replaceState({page: '/'}, 'Emoji Scavenger Hunt', '/');
+        history.replaceState({page: '/ja/'}, 'Emoji Scavenger Hunt', '/ja/');
       });
     }
 
