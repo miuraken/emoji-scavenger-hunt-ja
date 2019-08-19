@@ -2,7 +2,7 @@
 
 Emoji Scavenger Hunt is an experimental web based game that makes use of TensorFlow.js to identify objects seen by your webcam or mobile camera in the browser. We show you emojis 🍌 ⏰ ☕️ 📱 and you have to find those objects in the real world before your timer runs out 🏆 👍.
 
-Learn more about the experiment and try it for yourself at [g.co/emojiscavengerhunt](http://g.co/emojiscavengerhunt)
+Find out how we built this experiment by reading our [article](https://medium.com/tensorflow/a-look-at-how-we-built-the-emoji-scavenger-hunt-using-tensorflow-js-3d760a7ebfe6) on the Tensorflow blog or try it for yourself at [g.co/emojiscavengerhunt](http://g.co/emojiscavengerhunt).
 
 
 ## Development
@@ -65,7 +65,7 @@ $ docker run -v /path/to/data:/data -it model-builder
 After the training is completed, you'll see three files in the
 `data/saved_model_web` directory:
 
-- web_model.pb (the dataflow graph)
+- tensorflowjs_model.pb (the dataflow graph)
 - weights_manifest.json (weight manifest file)
 - group1-shard\*of\* (collection of binary weight files)
 
@@ -74,8 +74,15 @@ They are SavedModel files in a web-friendly format converted by the
 You can build your own game using your own custom image recognition model by replacing
 the corresponding files under the `dist/model/` directory with the newly generated ones.
 
-You also need to update `src/js/scavenger_classes.ts` in order to update the
-label outputs from the custom model with human-readable strings.
+The training script will also generate a file called `scavenger_classes.ts`
+which works in conjunction with your generated custom model.
+You need to replace the file at `src/js/scavenger_classes.ts` with this newly
+generated `scavenger_classes.ts` file so that the labels of your model match
+with the trained data.
+After replacing the file you can run the build script normally to test your
+model in a browser. See the README file for information on running a preview
+server.
+
 Update the game logic in `src/js/game.ts` if needed.
 
 ### Using GPU
