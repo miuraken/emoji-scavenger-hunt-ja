@@ -450,6 +450,21 @@ body {
     }
   }
 
+  &.not-supported {
+    .view__landing__logo {
+      width: 190px;
+      padding-bottom: 20px;
+    }
+
+    .view__landing__intro {
+      display: none;
+    }
+
+    .play-btn {
+      display: none;
+    }
+  }
+
   &__lang-selector-icon {
     bottom: 20px;
     position: absolute;
@@ -477,22 +492,6 @@ body {
     @include bp(s) {
       font-size: 18px;
     }
-  }
-
-  &.not-supported {
-    .view__landing__logo {
-      width: 190px;
-      padding-bottom: 20px;
-    }
-
-    .view__landing__intro {
-      display: none;
-    }
-
-    .play-btn {
-      display: none;
-    }
-
   }
 }
 
